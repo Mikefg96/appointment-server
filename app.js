@@ -1,6 +1,6 @@
 const express = require('express');
 const app = express();
-const port = process.env.PORT || 8080;
+const port = process.env.PORT || 3000;
 
 const bodyParser = require('body-parser'),
 	chalk = require('chalk'),
@@ -12,7 +12,7 @@ const bodyParser = require('body-parser'),
 /* 
 	MIDDLEWARE
 */
-app.use(cors);
+app.use(cors());
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -21,10 +21,8 @@ app.use(cookieParser());
 /*
 	RUTAS	
 */
-const public = require('./routes/public.route.js');
-app.use('/', public);
-// const services = require('./routes/services.route.js');
-// app.use('/services', services);
+const services = require('./routes/services.route.js');
+app.use('/services', services);
 
 /*
 	CONEXIÓN A LA MONGODB LOCAL
