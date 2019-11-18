@@ -21,8 +21,10 @@ app.use(cookieParser());
 /*
 	RUTAS	
 */
-const services = require('./routes/services.route.js');
+const services = require('./routes/services.route');
 app.use('/services', services);
+const appointments = require('./routes/appointments.route');
+app.use('/appointments', appointments);
 
 /*
 	CONEXIÓN A LA MONGODB LOCAL
