@@ -28,12 +28,14 @@ exports.createService = async(req, res) =>  {
 
     try {
         let newObj = await newService.save();
+        res.set('Content-Type', 'application/json');
         res.status(200).json({
             err: false,
             message: "Success!",
             obj: newObj
         });
     } catch(e) {
+        res.set('Content-Type', 'application/json');
         res.status(500).json({
             err: true,
             message: e,

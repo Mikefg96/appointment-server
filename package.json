@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "nodemon app.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha 'tests/integration.test.js'"
   },
   "author": "Mikefg96",
   "license": "ISC",
@@ -16,6 +16,10 @@
     "cors": "^2.8.5",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
+    "mocha": "^6.2.2",
     "mongoose": "^5.7.10"
+  },
+  "devDependencies": {
+    "supertest": "^4.0.2"
   }
 }
