@@ -7,10 +7,6 @@ const mongoose = require('mongoose'),
         price: {
             type: Number,
             require: true
-        },
-        imgUrl: {
-            type: String,
-            require: true
         }
     });
     
