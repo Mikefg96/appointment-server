@@ -10,4 +10,15 @@ const mongoose = require('mongoose'),
         }
     });
     
+class ServiceClass {
+    constructor() {
+
+    }
+
+    validateUserInput() {
+        return this.name && this.price ? true : false;
+    }
+}
+
+serviceSchema.loadClass(ServiceClass);
 module.exports = mongoose.model('service', serviceSchema);
